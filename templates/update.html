@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form method='POST'> 
+    {% csrf_token %}
+    {{artist_update.as_p}}
+    <input type="submit" name="submit" value="Update" class="btn btn-info btn-sm">
+</form>
+{% endblock content%}
