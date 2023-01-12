@@ -33,6 +33,7 @@ python manage.py runserver
 
 Usage
 Once the server is running, you can access the CRUD functionality by visiting the following URLs:
+
 home or 127.0.0.1:8000/ - to view the list of records
 form/ - to create a new record
 update_artist/<int:artist_id>/ - to update a specific artist details (replace 'id' with the actual id of the record)
