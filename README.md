@@ -1,51 +1,98 @@
-# CRUD-with-Django
-CRUD with Django
-This project is an example of how to implement CRUD (Create, Read, Update, and Delete) functionality with Django.
 
-Getting Started
+# CRUD with Django
+
+This project is an example of how to implement CRUD (Create, Read, Update, and Delete) functionality with Django. It's a great starting point for any project that requires basic CRUD functionality. The project includes examples of how to create, read, update, and delete records using Django's built-in views and models.
+
+
+![Logo](https://www.djangoproject.com/m/img/badges/djangoproject120x25.gif)
+
+
+## Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
+### Prerequisites
 You will need to have Python and Django installed on your machine.
 
-Installing
-Clone the repository to your local machine
 
-git clone https://github.com/bhrayhaw/crud-with-django.git
+### Run Locally
 
-Change into the project directory
-cd crud-with-django
+Clone the project
+
+```bash
+  git clone https://github.com/bhrayhaw/crud-with-django.git
+
+```
+
+Go to the project directory
+
+```bash
+  cd crud-with-django
+
+```
 
 Install the required packages
-pip install -r requirements.txt
+
+```bash
+  pip install -r requirements.txt
+
+```
 
 Apply the migrations to create the necessary database tables
-python manage.py makemigrations
-python manage.py migrate
 
-Running the tests
-To run the tests, use the following command:
-python manage.py test
+```bash
+  python manage.py makemigrations
+  python manage.py migrate
 
-Running the server
-To start the development server, use the following command:
-python manage.py runserver
 
-Usage
-Once the server is running, you can access the CRUD functionality by visiting the following URLs:
+```
 
+
+
+
+#### Running Tests
+
+To run tests, run the following command
+
+```bash
+  python manage.py test
+
+```
+
+#### Start the server
+
+```bash
+  python manage.py runserver
+```
+## Usage/Examples
+
+```python
 home or 127.0.0.1:8000/ - to view the list of records
+
 form/ - to create a new record
+
 update_artist/<int:artist_id>/ - to update a specific artist details (replace 'id' with the actual id of the record)
+
 update_album/<int:album_id>/ - to update a specific album details (replace 'id' with the actual id of the record)
+
 delete_album/<int:album_id>/ - to delete a specific album (replace 'id' with the actual id of the record)
+
 delete_artist/<int:artist_id>/ - to delete a specific artist (replace 'id' with the actual id of the record)
+```
 
-Built With
-Django - The web framework used
-Authors
-Elijah Apreko - Initial work - github.com/bhrayhaw
 
-Acknowledgments
-@Kazi Ariyan
-[etc]
+## Authors
+
+- [@bhrayhaw](https://www.github.com/bhrayhaw)
+
+
+## Acknowledgements
+
+ - [Kazi Ariya](https://web.facebook.com/kaziariyanbd/?_rdc=1&_rdr)
+ 
+## Tech Stack
+
+**Client:** HTML, Bootstrap, Python, Django
+
+**DataBase:** pgadmin
+
