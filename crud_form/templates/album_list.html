@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Button to go back to list-->
+<a href="{% url 'crud_form:index' %}" class="btn btn-primary btn-sm">Back to List</a>
+<h4>Artist Name: {{musician_details.first_name}} {{musician_details.last_name}}</h4>
+<h4>Instrument: {{musician_details.instrument}}</h4>
+<h4>Rating: {{musician_details.number_stars__avg}}</h4>
+<a href="{% url 'crud_form:' artist_id=artist_info.id %}" class="btn btn-primary btn-sm">Edit</a>
+<a href="{% url 'delete_artist' artist_id=artist_info.id %}" class="btn btn-danger btn-sm">Delete</a>
+
+
+<hr>
+
+    {% comment %} button to add album 
+    <a href="{% url 'crud_form:create_album' artist_id=musician_details.pk %}" class="btn btn-primary btn-sm">Add Album</a>{% endcomment %}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Album Name</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+        <th>Update/Delete</th>
+
+    </tr>
+    {% for album in musician_details.album_list.all %}
+    <tr>
+        <td>{{album.album_name}}</td>
+        <td>{{album.release_date}}</td>
+        <td>{{album.number_stars}}</td>
+        <td>{% comment %} <a href="{% url 'update_album' album.id %}" class="btn btn-primary btn-sm">Edit</a>| {% endcomment %}
+            <form action="">
+                <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content%}

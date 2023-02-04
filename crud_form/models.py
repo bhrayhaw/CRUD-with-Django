@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class MusicianModel(models.Model):
@@ -10,8 +11,12 @@ class MusicianModel(models.Model):
     def __str__(self) -> str:
         return self.first_name + " " + self.last_name
 
+    def get_absolute_url(self):
+        return reverse("index", kwargs={"pk": self.pk})
+    
+
 class AlbumModel(models.Model):
-    artist = models.ForeignKey(MusicianModel, on_delete = models.CASCADE)
+    artist = models.ForeignKey(MusicianModel, on_delete = models.CASCADE, related_name = "album_list")
     album_name = models.CharField(max_length = 40)
     release_date = models.DateField()
 
@@ -25,3 +30,6 @@ class AlbumModel(models.Model):
     number_stars = models.IntegerField(choices = rating)
     def __str__(self) -> str:
         return self.album_name + " " + str(self.number_stars)
+
+    def get_absolute_url(self):
+        return reverse("musician_details", kwargs={"pk": self.pk})

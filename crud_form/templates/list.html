@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
     <!--button to add new artist-->
-    <a href="{% url 'form' %}" class="btn btn-primary">Add New Artist</a>
+    <a href="{% url 'crud_form:create_musician' %}">Add New Artist</a>
+
+    <ul>
     {% for musician in musician_list %}
 
-        <li><a href="{% url 'album_list' artist_id=musician.id %} "> 
+        <li><a href="{% url 'crud_form:musician_details' pk=musician.pk %}">
             {{ musician.first_name }}{{ musician.last_name }}</a></li>
         
     {% endfor %}
-
+    </ul>
 {% endblock content%}
