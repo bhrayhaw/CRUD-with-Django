@@ -6,14 +6,14 @@
 <h4>Artist Name: {{musician_details.first_name}} {{musician_details.last_name}}</h4>
 <h4>Instrument: {{musician_details.instrument}}</h4>
 <h4>Rating: {{musician_details.number_stars__avg}}</h4>
-<a href="{% url 'crud_form:' artist_id=artist_info.id %}" class="btn btn-primary btn-sm">Edit</a>
-<a href="{% url 'delete_artist' artist_id=artist_info.id %}" class="btn btn-danger btn-sm">Delete</a>
+<a href="{% url 'crud_form:update_musician' pk=musician_details.pk %}" class="btn btn-primary btn-sm">Edit</a>
+<a href="{% url 'crud_form:delete_musician'  pk=musician_details.pk  %}" class="btn btn-danger btn-sm">Delete</a>
 
 
 <hr>
 
-    {% comment %} button to add album 
-    <a href="{% url 'crud_form:create_album' artist_id=musician_details.pk %}" class="btn btn-primary btn-sm">Add Album</a>{% endcomment %}
+    {% comment %} button to add album {% endcomment %}
+    <a href="{% url 'crud_form:create_album' artist_id=musician_details.pk %}" class="btn btn-primary btn-sm">Add Album</a>
 
 <table class="table table-bordered">
     <tr>

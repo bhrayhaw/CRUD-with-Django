@@ -12,7 +12,7 @@ class MusicianModel(models.Model):
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
-        return reverse("index", kwargs={"pk": self.pk})
+        return reverse("crud_form:index")
     
 
 class AlbumModel(models.Model):
@@ -32,4 +32,4 @@ class AlbumModel(models.Model):
         return self.album_name + " " + str(self.number_stars)
 
     def get_absolute_url(self):
-        return reverse("musician_details", kwargs={"pk": self.pk})
+        return reverse("crud_form:musician_details" , kwargs = {'pk': self.artist.id})
