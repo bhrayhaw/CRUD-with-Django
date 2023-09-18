@@ -47,7 +47,9 @@ class UpdateAlbum(UpdateView):
     template_name = 'update_album.html'
 
 class DeleteAlbum(DeleteView):
-    context_object_name = 'album'
     model = models.AlbumModel
     template_name = 'delete_album.html'
     success_url = reverse_lazy('crud_form:musician_details')
+
+    def get_queryset(self):
+        return self.model.objects.filter(artist=self.kwargs['artist_id'])

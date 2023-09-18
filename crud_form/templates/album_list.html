@@ -30,7 +30,7 @@
         <td>{{album.number_stars}}</td>
         <td><a href="{% url 'crud_form:update_album' pk=album.pk %}" class="btn btn-primary btn-sm">Edit</a>|
             <form action="">
-                <button class="btn btn-danger btn-sm">Delete</button>
+                <a href="{% url 'crud_form:delete_album' artist_id=artist.id album_id=album.id %}" class="btn btn-danger btn-sm">Delete Album</a>
             </form>
         </td>
     </tr>

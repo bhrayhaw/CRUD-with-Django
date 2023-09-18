@@ -11,5 +11,5 @@ urlpatterns = [
     path('delete_musician/<pk>/', views.DeleteMusician.as_view(), name='delete_musician'),
     path('create_album/<int:artist_id>/', views.CreateAlbum.as_view(), name='create_album'),
     path('update_album/<pk>/', views.UpdateAlbum.as_view(), name='update_album'),
-    path('delete_album/<pk>/', views.DeleteAlbum.as_view(), name='delete_album'),
+    path('delete_album/<int:artist_id>/', views.DeleteAlbum.as_view(), name='delete_album'),
 ]

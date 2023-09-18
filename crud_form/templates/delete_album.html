@@ -4,5 +4,5 @@
 <form method="post">
     {% csrf_token %}
     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
-    <a href="{% url 'crud_form:musician_details' pk=album.pk %}" class="btn btn-primary btn-sm">Cancel</a>
+    <a href="{% url 'crud_form:musician_details' artist_id=musician_details.pk %}" class="btn btn-primary btn-sm">Cancel</a>
 {% endblock content%}
