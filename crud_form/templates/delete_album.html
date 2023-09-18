@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3> Delete {{ album.album_name}} </h3>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+    <a href="{% url 'crud_form:musician_details' pk=album.pk %}" class="btn btn-primary btn-sm">Cancel</a>
+{% endblock content%}
